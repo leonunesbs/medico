@@ -4,6 +4,7 @@ from django.contrib import admin
 
 import django_js_reverse.views
 from rest_framework.routers import DefaultRouter
+from graphene_django.views import GraphQLView
 
 from common.routes import routes as common_routes
 
@@ -19,4 +20,5 @@ urlpatterns = [
     path("jsreverse/", django_js_reverse.views.urls_js, name="js_reverse"),
 
     path("api/", include(router.urls), name="api"),
+    path("graphql/", GraphQLView.as_view(graphiql=True)),
 ]

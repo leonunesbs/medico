@@ -17,3 +17,5 @@ whitenoise
 psutil
 ipython
 sentry-sdk
+graphene-django
+django-filter

@@ -5,7 +5,8 @@ import os
 from decouple import config  # noqa
 
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+BASE_DIR = os.path.dirname(os.path.dirname(
+    os.path.dirname(os.path.abspath(__file__))))
 
 
 def base_dir_join(*args):
@@ -35,9 +36,17 @@ INSTALLED_APPS = [
     "webpack_loader",
     "import_export",
     "rest_framework",
+    "graphene_django",
     "common",
+
     "users",
+
+    'colaboradores',
+    'pacientes',
+    'agenda',
+    'consultas'
 ]
+
 
 MIDDLEWARE = [
     "debreach.middleware.RandomCommentMiddleware",
@@ -82,10 +91,10 @@ TEMPLATES = [
 WSGI_APPLICATION = "medico.wsgi.application"
 
 AUTH_PASSWORD_VALIDATORS = [
-    {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",},
-    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",},
-    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",},
-    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",},
+    {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator", },
+    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator", },
+    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator", },
+    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator", },
 ]
 
 REST_FRAMEWORK = {
@@ -101,7 +110,7 @@ REST_FRAMEWORK = {
 
 LANGUAGE_CODE = "pt-br"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "America/Sao_Paulo"
 
 USE_I18N = True
 
@@ -136,3 +145,9 @@ COMMIT_SHA = config("HEROKU_SLUG_COMMIT", default="")
 # https://github.com/vintasoftware/safari-samesite-cookie-issue
 CSRF_COOKIE_SAMESITE = None
 SESSION_COOKIE_SAMESITE = None
+
+
+# Grephene
+GRAPHENE = {
+    "SCHEMA": "common.schema.schema"
+}
