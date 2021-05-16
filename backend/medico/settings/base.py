@@ -41,6 +41,9 @@ INSTALLED_APPS = [
 
     "users",
 
+    'blog',
+
+    'unidades',
     'colaboradores',
     'pacientes',
     'agenda',

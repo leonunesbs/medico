@@ -10,7 +10,7 @@ from .models import User
 class UsersNode(DjangoObjectType):
     class Meta:
         model = User
-        filter_fields = ['email', 'is_staff']
+        filter_fields = '__all__'
         interfaces = (relay.Node, )
 
     def resolve_id(self, info):
@@ -20,3 +20,11 @@ class UsersNode(DjangoObjectType):
 class Query(ObjectType):
     users = relay.Node.Field(UsersNode)
     all_users = DjangoFilterConnectionField(UsersNode)
+
+
+class Mutation():
+    pass
+
+
+class Subscription(ObjectType):
+    pass
