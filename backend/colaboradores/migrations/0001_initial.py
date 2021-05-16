@@ -12,10 +12,15 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Agenda',
+            name='Colaborador',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('horario', models.DateTimeField()),
+                ('nome_completo', models.CharField(max_length=100)),
+                ('ocupacao', models.CharField(max_length=100)),
+                ('registro', models.CharField(blank=True, max_length=100, null=True)),
             ],
+            options={
+                'verbose_name_plural': 'Colaboradores',
+            },
         ),
     ]

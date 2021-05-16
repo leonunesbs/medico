@@ -12,10 +12,11 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Agenda',
+            name='Paciente',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('horario', models.DateTimeField()),
+                ('nome_completo', models.CharField(max_length=100)),
+                ('data_de_nascimento', models.DateField()),
             ],
         ),
     ]
